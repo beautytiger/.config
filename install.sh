@@ -10,17 +10,17 @@ yellow=$(tput setaf 3)
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-if [ -d ${DIR}/vimconfig ]
+if [ -d ${DIR}/.vimconfig ]
 then
-    echo "Backing up ${yellow}vimconfig${textreset}."
-    mv ${DIR}/vimconfig ${DIR}/vimconfig.original
+    echo "Backing up ${yellow}.vimconfig${textreset}."
+    mv ${DIR}/.vimconfig ${DIR}/.vimconfig.original
 fi
 
 mkdir ~/.vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Cloning vimconfig..."
-hash git >/dev/null && /usr/bin/env git clone https://github.com/beautytiger/.config.git ${DIR}/vimconfig || {
+hash git >/dev/null && /usr/bin/env git clone https://github.com/beautytiger/.config.git ${DIR}/.vimconfig || {
   echo "${red}Could not retrieve the vimconfigs! Is git working?${textreset}"
   exit
 }
@@ -41,7 +41,7 @@ fi
 
 echo "Creating .vimrc and .vim in homefolder..."
 #ln -s ${DIR}/vimconfig/vim ~/.vim
-ln -s ${DIR}/vimconfig/vimrc ~/.vim/vimrc
+ln -s ${DIR}/.vimconfig/vimrc ~/.vim/vimrc
 #mkdir ${DIR}/vimconfig/vim/bundle
 #git clone https://github.com/gmarik/vundle.git ${DIR}/vimconfig/vim/bundle/vundle
 vim +PlugInstall +qall
