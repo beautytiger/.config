@@ -16,6 +16,7 @@ then
     mv ${DIR}/vimconfig ${DIR}/vimconfig.original
 fi
 
+mkdir ~/.vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Cloning vimconfig..."
