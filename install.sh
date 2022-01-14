@@ -23,10 +23,6 @@ then
     mv ~/.vim ~/.vim.original;
 fi
 
-echo "create new ~/.vim dir"
-mkdir ~/.vim
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 echo "Cloning vimconfig..."
 hash git >/dev/null && /usr/bin/env git clone https://github.com/beautytiger/.config.git ${DIR}/.vimconfig || {
   echo "${red}Could not retrieve the vimconfigs! Is git working?${textreset}"
@@ -45,9 +41,9 @@ echo "Creating .vimrc and .vim in homefolder..."
 ln -s ${DIR}/.vimconfig/vimrc ~/.vim/vimrc
 #mkdir ${DIR}/vimconfig/vim/bundle
 #git clone https://github.com/gmarik/vundle.git ${DIR}/vimconfig/vim/bundle/vundle
-vim +PlugInstall +qall
+#vim +PlugInstall +qall
 
-python3 ~/.vim/plugged/YouCompleteMe/install.py
+#python3 ~/.vim/plugged/YouCompleteMe/install.py
 
 echo "Done, execute vi/vim to retrieve the vim plugins..."
 
