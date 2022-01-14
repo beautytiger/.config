@@ -36,6 +36,7 @@ then
   mv ~/.vim/vimrc ~/.vim/vimrc.original;
 fi
 
+mkdir ~/.vim
 echo "Creating .vimrc and .vim in homefolder..."
 #ln -s ${DIR}/vimconfig/vim ~/.vim
 ln -s ${DIR}/.vimconfig/vimrc ~/.vim/vimrc
