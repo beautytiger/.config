@@ -26,10 +26,10 @@ hash git >/dev/null && /usr/bin/env git clone https://github.com/beautytiger/.co
 }
 
 echo "Looking for an existing vimrc config..."
-if [ -f ~/.vimrc ] || [ -h ~/.vimrc ]
+if [ -f ~/.vim/vimrc ] || [ -h ~/.vim/vimrc ]
 then
-  echo "Found ${yellow}~/.vimrc${textreset}. Backing up to ${yellow}~/.vimrc.original${textreset}";
-  mv ~/.vimrc ~/.vimrc.original;
+  echo "Found ${yellow}~/.vim/vimrc${textreset}. Backing up to ${yellow}~/.vim/vimrc.original${textreset}";
+  mv ~/.vim/vimrc ~/.vim/vimrc.original;
 fi
 
 echo "Looking for an existing .vim folder..."
@@ -41,10 +41,12 @@ fi
 
 echo "Creating .vimrc and .vim in homefolder..."
 #ln -s ${DIR}/vimconfig/vim ~/.vim
-ln -s ${DIR}/vimconfig/vimrc ~/.vimrc
+ln -s ${DIR}/vimconfig/vimrc ~/.vim/vimrc
 #mkdir ${DIR}/vimconfig/vim/bundle
 #git clone https://github.com/gmarik/vundle.git ${DIR}/vimconfig/vim/bundle/vundle
 vim +PlugInstall +qall
+
+python3 ~/.vim/plugged/YouCompleteMe/install.py
 
 echo "Done, execute vi/vim to retrieve the vim plugins..."
 
