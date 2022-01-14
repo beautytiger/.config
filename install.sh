@@ -23,6 +23,7 @@ then
     mv ~/.vim ~/.vim.original;
 fi
 
+echo "create new ~/.vim dir"
 mkdir ~/.vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
