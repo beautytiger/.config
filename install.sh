@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "start working"
+
 textreset=$(tput sgr0) # reset the foreground colour
 red=$(tput setaf 1)
 green=$(tput setaf 2)
@@ -13,6 +15,8 @@ then
     echo "Backing up ${yellow}vimconfig${textreset}."
     mv ${DIR}/vimconfig ${DIR}/vimconfig.original
 fi
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Cloning vimconfig..."
 hash git >/dev/null && /usr/bin/env git clone https://github.com/beautytiger/.config.git ${DIR}/vimconfig || {
