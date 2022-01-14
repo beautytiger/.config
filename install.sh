@@ -16,6 +16,13 @@ then
     mv ${DIR}/.vimconfig ${DIR}/.vimconfig.original
 fi
 
+echo "Looking for an existing .vim folder..."
+if [ -d ~/.vim ]
+then
+    echo "Found ${yellow}~/.vim${textreset} folder. Backing up to ${yellow}~/.vim.original${textreset}";
+    mv ~/.vim ~/.vim.original;
+fi
+
 mkdir ~/.vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -30,13 +37,6 @@ if [ -f ~/.vim/vimrc ] || [ -h ~/.vim/vimrc ]
 then
   echo "Found ${yellow}~/.vim/vimrc${textreset}. Backing up to ${yellow}~/.vim/vimrc.original${textreset}";
   mv ~/.vim/vimrc ~/.vim/vimrc.original;
-fi
-
-echo "Looking for an existing .vim folder..."
-if [ -d ~/.vim ]
-then
-    echo "Found ${yellow}~/.vim${textreset} folder. Backing up to ${yellow}~/.vim.original${textreset}";
-    mv ~/.vim ~/.vim.original;
 fi
 
 echo "Creating .vimrc and .vim in homefolder..."
