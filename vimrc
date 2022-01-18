@@ -24,9 +24,9 @@ filetype plugin indent on
 "set mouse=a
 set encoding=utf-8
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set list
 set listchars=tab:▸\ ,trail:▫
 set scrolloff=5
@@ -49,42 +49,54 @@ set incsearch
 set ignorecase
 set smartcase
 
-noremap U 5k
-noremap E 5j
+noremap K 5k
+noremap J 5j
+noremap H 0
+noremap L $
+noremap W 5w
+noremap B 5b
 
 noremap = nzz
 noremap - Nzz
 noremap <LEADER><CR> :nohlsearch<CR>
 
-map s <nop>
-map S :w<CR>
-map Q :q<CR>
-map R :source $MYVIMRC<CR>
-map ; :
+noremap s <nop>
+noremap S :w<CR>
+noremap Q :q<CR>
+noremap R :source $MYVIMRC<CR>
+noremap ; :
 
-map sl :set splitright<CR>:vsplit<CR>
-map sh :set nosplitright<CR>:vsplit<CR>
-map sk :set nosplitbelow<CR>:split<CR>
-map sj :set splitbelow<CR>:split<CR>
+noremap sl :set splitright<CR>:vsplit<CR>
+noremap sh :set nosplitright<CR>:vsplit<CR>
+noremap sk :set nosplitbelow<CR>:split<CR>
+noremap sj :set splitbelow<CR>:split<CR>
 
-map sv <C-w>t<C-w>H
-map sb <C-w>t<C-w>K
+noremap sv <C-w>t<C-w>H
+noremap sb <C-w>t<C-w>K
 
-map <LEADER>l <C-w>l
-map <LEADER>h <C-w>h
-map <LEADER>j <C-w>j
-map <LEADER>k <C-w>k
+noremap <LEADER>l <C-w>l
+noremap <LEADER>h <C-w>h
+noremap <LEADER>j <C-w>j
+noremap <LEADER>k <C-w>k
 
-map <up> :res +5<CR>
-map <down> :res -5<CR>
-map <left> :vertical resize-5<CR>
-map <right> :vertical resize+5<CR>
+noremap <up> :res +5<CR>
+noremap <down> :res -5<CR>
+noremap <left> :vertical resize-5<CR>
+noremap <right> :vertical resize+5<CR>
 
-map tk :tabe<CR>
-map th :-tabnext<CR>
-map tl :tabnext<CR>
+noremap tk :tabe<CR>
+noremap tK :tab split<CR>
+noremap th :-tabnext<CR>
+noremap tl :tabnext<CR>
+noremap tmh :-tabmove<CR>
+noremap tml :tabmove<CR>
 
 map <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
+
+" ===
+" === Insert Mode Cursor Movement
+" ===
+inoremap <C-a> <ESC>A
 
 call plug#begin()
 
@@ -104,10 +116,10 @@ Plug 'majutsushi/tagbar', { 'on': 'TagbarOpenAutoClose' }
 Plug 'w0rp/ale'
 
 " Auto Complete
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 
 " Undo Tree
-Plug 'mbbill/undotree/'
+"Plug 'mbbill/undotree/'
 
 " Other visual enhancement
 Plug 'nathanaelkane/vim-indent-guides'
@@ -120,18 +132,18 @@ Plug 'mhinz/vim-signify'
 Plug 'gisphm/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
 
 " HTML, CSS, JavaScript, PHP, JSON, etc.
-Plug 'elzr/vim-json'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'spf13/PIV', { 'for' :['php', 'vim-plug'] }
-Plug 'gko/vim-coloresque', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
-Plug 'pangloss/vim-javascript', { 'for' :['javascript', 'vim-plug'] }
-Plug 'mattn/emmet-vim'
+"Plug 'elzr/vim-json'
+"Plug 'hail2u/vim-css3-syntax'
+"Plug 'spf13/PIV', { 'for' :['php', 'vim-plug'] }
+"Plug 'gko/vim-coloresque', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
+"Plug 'pangloss/vim-javascript', { 'for' :['javascript', 'vim-plug'] }
+"Plug 'mattn/emmet-vim'
 
 " Python
 Plug 'vim-scripts/indentpython.vim'
 
 " Bookmarks
-Plug 'kshenoy/vim-signature'
+"Plug 'kshenoy/vim-signature'
 
 " Other useful utilities
 Plug 'terryma/vim-multiple-cursors'
