@@ -91,7 +91,7 @@ noremap tl :tabnext<CR>
 noremap tmh :-tabmove<CR>
 noremap tml :tabmove<CR>
 
-map <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
+noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 " ===
 " === Insert Mode Cursor Movement

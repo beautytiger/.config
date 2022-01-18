@@ -205,10 +205,10 @@ noremap = n
 " === Window management
 " ===
 " Use <space> + new arrow keys for moving the cursor around windows
-map <LEADER>l <C-w>l
-map <LEADER>h <C-w>h
-map <LEADER>j <C-w>j
-map <LEADER>k <C-w>k
+noremap <LEADER>l <C-w>l
+noremap <LEADER>h <C-w>h
+noremap <LEADER>j <C-w>j
+noremap <LEADER>k <C-w>k
 
 "noremap <LEADER>w <C-w>w
 "noremap qf <C-w>o
@@ -579,3 +579,4 @@ color dracula
 " ===
 exec "nohlsearch"
 
+let g:rainbow_active = 1
