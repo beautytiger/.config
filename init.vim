@@ -4,14 +4,6 @@
 "| |  | | | |   | |\  | \ V /  | || |  | |  _ <| |___
 "|_|  |_| |_|   |_| \_|  \_/  |___|_|  |_|_| \_\\____|
 
-" Author: @theniceboy
-
-" Checkout-list
-" vim-esearch
-" fmoralesc/worldslice
-" SidOfc/mkdx
-
-
 " ===
 " === Auto load for first time uses
 " ===
@@ -370,6 +362,8 @@ endfunc
 " ===
 
 call plug#begin('$HOME/.config/nvim/plugged')
+
+Plug 'Mofiqul/dracula.nvim'
 
 " Plug 'LoricAndre/fzterm.nvim'
 
@@ -833,19 +827,19 @@ let g:Lf_UseCache = 0
 " ===
 " === Undotree
 " ===
-noremap L :UndotreeToggle<CR>
-let g:undotree_DiffAutoOpen = 1
-let g:undotree_SetFocusWhenToggle = 1
-let g:undotree_ShortIndicators = 1
-let g:undotree_WindowLayout = 2
-let g:undotree_DiffpanelHeight = 8
-let g:undotree_SplitWidth = 24
-function g:Undotree_CustomMap()
-	nmap <buffer> u <plug>UndotreeNextState
-	nmap <buffer> e <plug>UndotreePreviousState
-	nmap <buffer> U 5<plug>UndotreeNextState
-	nmap <buffer> E 5<plug>UndotreePreviousState
-endfunc
+"noremap L :UndotreeToggle<CR>
+"let g:undotree_DiffAutoOpen = 1
+"let g:undotree_SetFocusWhenToggle = 1
+"let g:undotree_ShortIndicators = 1
+"let g:undotree_WindowLayout = 2
+"let g:undotree_DiffpanelHeight = 8
+"let g:undotree_SplitWidth = 24
+"function g:Undotree_CustomMap()
+"	nmap <buffer> u <plug>UndotreeNextState
+"	nmap <buffer> e <plug>UndotreePreviousState
+"	nmap <buffer> U 5<plug>UndotreeNextState
+"	nmap <buffer> E 5<plug>UndotreePreviousState
+"endfunc
 
 
 " ==
